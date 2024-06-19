@@ -1,0 +1,14 @@
+echo '[Unit]
+Description=Jenkins Continuous Integration Server - Custom
+After=network.target
+
+[Service]
+Type=simple
+User='$SERVICE_USER'
+Group='$SERVICE_USER'
+ExecStart=/usr/bin/java -jar '$JENKINS_DIR$JENKINS_WAR'
+Restart=always
+Environment="JENKINS_HOME='$JENKINS_DIR'data/"
+
+[Install]
+WantedBy=multi-user.target'
