@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# move to folder of this script
+cd $(dirname "$( realpath "$0" )")
+
 # load configuration
 source ./config.sh
 

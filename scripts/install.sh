@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# move to folder of this script
+cd $(dirname "$( realpath "$0" )")
+
 # load configuration
 source ./config.sh
 
@@ -14,14 +17,14 @@ if [ "$(whoami)" != "root" ]
 if [ -a "$SERVICE_FILE_PATH""$SERVICE_NAME" ]
 	then
 	echo "ERROR: Service is already created!"
-	exit 2
+	#exit 2
 	fi
 
 # add system user to run Jenkins service/process
 if ! [ -z "$( grep $SERVICE_USER: /etc/passwd )" ]
 	then
 	echo "ERRPR: User $SERVICE_USER already exists!"
-	exit 4
+	#exit 4
 	fi
 useradd -d $JENKINS_DIR $SERVICE_USER 
 
