@@ -25,5 +25,5 @@ Shared config file for both scripts.
 
 
 ## Java version
-Your probably want to check whats the defautl Java version on your host
+Your probably want to check whats the default Java version on your host ( Java 17 works ):
 > update-alternatives --config java
