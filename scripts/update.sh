@@ -12,9 +12,13 @@ if [ "$(whoami)" != "$SERVICE_USER" ] && [ "$(whoami)" != "root" ]
 	exit 1
 	fi
 
+# create temporar directory where Jenkisn will be downloaded
+mkdir -p $TMP_DL_DIR
+
 # download latest jenkins
 wget $JENKINS_DL_URL -O $TMP_DL_DIR"jenkins.war"
 
+# compare newly downloaded WAR file and currently used WAR file
 cmp $TMP_DL_DIR"jenkins.war" $JENKINS_DIR""$JENKINS_WAR
 RC=$?
 
