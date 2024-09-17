@@ -53,9 +53,11 @@ cp $TMP_DL_DIR"jenkins.war" $JENKINS_DIR""$JENKINS_WAR
 # install systemd service file
 bash ./jenkins-custom.service > $SERVICE_FILE_PATH""$SERVICE_NAME".service"
 
-# install systemd timer file
-bash ./jenkins-custom.timer > $SERVICE_FILE_PATH""$SERVICE_NAME".timer"
+# install systemd timer file for updating
+bash ./jenkins-custom_update.timer > $SERVICE_FILE_PATH""$SERVICE_NAME"_update.timer"
 
+# install systemd servkce file for updaeting
+bash ./jenkins-custom_update.service > $SERVICE_FILE_PATH""$SERVICE_NAME"_update.service"
 
 # set permissions
 chown -R $SERVICE_USER:$SERVICE_USER $JENKINS_DIR 
