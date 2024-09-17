@@ -1,0 +1,9 @@
+echo "[Unit]
+Description=Run script to update Jenkins version
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target"
