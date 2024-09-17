@@ -14,7 +14,7 @@ if [ "$(whoami)" != "root" ]
 	fi
 
 # check if service is already created
-if [ -a "$SERVICE_FILE_PATH""$SERVICE_NAME" ]
+if [ -a "$SERVICE_FILE_PATH""$SERVICE_NAME"".service" ]
 	then
 	echo "ERROR: Service is already created!"
 	exit 2
@@ -51,7 +51,11 @@ mkdir -p $JENKINS_DIR'data/'
 cp $TMP_DL_DIR"jenkins.war" $JENKINS_DIR""$JENKINS_WAR
 
 # install systemd service file
-bash ./jenkins-custom.service > $SERVICE_FILE_PATH""$SERVICE_NAME
+bash ./jenkins-custom.service > $SERVICE_FILE_PATH""$SERVICE_NAME".service"
+
+# install systemd timer file
+bash ./jenkins-custom.timer > $SERVICE_FILE_PATH""$SERVICE_NAME".timer"
+
 
 # set permissions
 chown -R $SERVICE_USER:$SERVICE_USER $JENKINS_DIR 
