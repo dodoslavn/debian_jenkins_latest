@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export SERVICE_NAME="jenkins-custom.service"
+export SERVICE_NAME="jenkins-custom"
 export SERVICE_FILE_PATH="/etc/systemd/system/"
 export SERVICE_USER="jenkins_cs"
 export TMP_DL_DIR="/tmp/jenkins_custom/"
