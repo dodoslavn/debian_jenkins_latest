@@ -65,6 +65,6 @@ chmod -R 750 $JENKINS_DIR
 
 # reload systemd
 systemctl daemon-reload
-systemctl start $SERVICE_NAME
+systemctl start $SERVICE_NAME"_update.timer"
 systemctl enable $SERVICE_NAME
 systemctl status $SERVICE_NAME
