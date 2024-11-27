@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/java -jar '$JENKINS_DIR$JENKINS_WAR'
+ExecStart='$(pwd)'/update.sh
 
 
 [Install]
